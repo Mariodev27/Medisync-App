@@ -8,5 +8,9 @@ class GlobalColors {
   static HexColor fifthColor = HexColor('#F2E9E4');
   static HexColor sixthColor = HexColor('#51D0D0');
   static HexColor seventhColor = HexColor('#FFFFFF');
-  static HexColor eighthColor = HexColor('#0000004D');
+  static HexColor eighthColor = HexColor('#00000066');
+  static HexColor ninthColor = HexColor('#5DB0A8');
+  static HexColor tenthColor = HexColor('#887E7EDE');
+  static HexColor eleventhColor = HexColor('#50C2C9');
+  static HexColor twelfthColor = HexColor('#000000');
 }

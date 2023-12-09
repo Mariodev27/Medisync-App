@@ -3,6 +3,7 @@ import 'package:medisync/src/utils/global_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:medisync/src/widgets/BackgroundTemplate.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -17,15 +18,27 @@ class WelcomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Medisync',
+                AppLocalizations.of(context)!
+                    .medisync, // Utiliza el texto localizado para 'Medisync'
                 style: TextStyle(
-                  color: GlobalColors.eighthColor,
+                  color: GlobalColors.ninthColor,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 40), // Ajusta el valor para cambiar el espacio
               Text(
-                'Preocúpate menos...Vive más sano...',
+                AppLocalizations.of(context)!
+                    .worryLess, // Utiliza el texto localizado para 'Preocúpate menos...Vive'
+                style: TextStyle(
+                  color: GlobalColors.primaryColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+              Text(
+                AppLocalizations.of(context)!
+                    .liveHealthier, // Utiliza el texto localizado para 'más sano...'
                 style: TextStyle(
                   color: GlobalColors.primaryColor,
                   fontSize: 20,
@@ -38,7 +51,8 @@ class WelcomePage extends StatelessWidget {
                 height: 250,
               ),
               Text(
-                'Bienvenido!',
+                AppLocalizations.of(context)!
+                    .welcome, // Utiliza el texto localizado para 'Bienvenido'
                 style: TextStyle(
                   color: GlobalColors.primaryColor,
                   fontSize: 25,
@@ -52,7 +66,12 @@ class WelcomePage extends StatelessWidget {
                 height: 60, // Altura del botón
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: GlobalColors.seventhColor, backgroundColor: GlobalColors.sixthColor, // Color del texto
+                    foregroundColor: GlobalColors.seventhColor,
+                    backgroundColor: GlobalColors.sixthColor, // Color del texto
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          15), // Ajusta el valor para cambiar el redondeado
+                    ),
                   ),
                   onPressed: () {
                     Get.to(() => const LoginPage());
@@ -60,7 +79,12 @@ class WelcomePage extends StatelessWidget {
                   child: const Text(
                     'Empezar',
                     style: TextStyle(
-                      fontSize: 25, // Tamaño del texto
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                      height: 0.03,
+                      letterSpacing: 2.10,
                     ),
                   ),
                 ),

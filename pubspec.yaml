@@ -38,6 +38,9 @@ dependencies:
   get: ^4.6.6
   hexcolor: ^3.0.1
   flutter_svg: ^2.0.9
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +58,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true # Add this line to your flutter section
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

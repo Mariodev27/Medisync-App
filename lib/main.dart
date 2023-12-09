@@ -1,8 +1,9 @@
-import 'package:medisync/src/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medisync/src/pages/welcome/WelcomePage.dart';
+import 'package:medisync/src/pages/splash/splash_page.dart';
 import 'package:medisync/src/utils/global_color.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations
+          .supportedLocales, // Utiliza AppLocalizations.supportedLocales
       title: 'App Tesis',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -32,7 +40,6 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const SplashPage()),
-        GetPage(name: '/welcome', page: () => const WelcomePage()),
       ],
       navigatorKey: Get.key,
     );
