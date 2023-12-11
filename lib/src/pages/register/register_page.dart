@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:medisync/src/widgets/BackgroundTemplate.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:medisync/src/pages/home/home_page.dart';
 import 'package:medisync/src/pages/login/login_page.dart';
 import 'package:medisync/src/utils/global_color.dart';
 
@@ -134,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              Get.to(() => const HomePage());
+                              Get.to(() => const LoginPage());
                             },
                             child: const Text(
                               'Registrate',
