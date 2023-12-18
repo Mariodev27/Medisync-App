@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:medisync/src/widgets/BackgroundTemplate.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:medisync/src/pages/home/home_page.dart';
-import 'package:medisync/src/pages/register/register_page.dart';
+import 'package:medisync/src/pages/login/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +44,7 @@ class LoginPage extends StatelessWidget {
                     width: 318,
                     height: 56,
                     child: TextField(
+                      controller: controller.emailController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -63,6 +63,7 @@ class LoginPage extends StatelessWidget {
                     width: 318,
                     height: 56,
                     child: TextField(
+                      controller: controller.passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -103,9 +104,7 @@ class LoginPage extends StatelessWidget {
                               15), // Ajusta el valor para cambiar el redondeado
                         ),
                       ),
-                      onPressed: () {
-                        Get.to(() => const HomePage());
-                      },
+                      onPressed: controller.login,
                       child: const Text(
                         'Ingrese',
                         style: TextStyle(
@@ -132,9 +131,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Get.to(() => const RegisterPage());
-                        },
+                        onPressed: controller.gotoRegisterPage,
                         child: Text(
                           'Regístrate',
                           style: TextStyle(

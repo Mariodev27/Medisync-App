@@ -4,6 +4,7 @@ import 'package:medisync/src/pages/splash/splash_page.dart';
 import 'package:medisync/src/utils/global_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:medisync/src/pages/register/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +41,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const SplashPage()),
+        GetPage(name: '/register', page: () => RegisterPage()),
       ],
       navigatorKey: Get.key,
     );

@@ -26,7 +26,8 @@ class WelcomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 40), // Ajusta el valor para cambiar el espacio
+              const SizedBox(
+                  height: 40), // Ajusta el valor para cambiar el espacio
               Text(
                 AppLocalizations.of(context)!
                     .worryLess, // Utiliza el texto localizado para 'Preocúpate menos...Vive'
@@ -74,7 +75,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Get.to(() => const LoginPage());
+                    Get.to(() => LoginPage());
                   },
                   child: const Text(
                     'Empezar',

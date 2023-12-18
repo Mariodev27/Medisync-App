@@ -41,6 +41,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  iconsax: ^0.0.8
+  http: ^1.1.2
 
 dev_dependencies:
   flutter_test:

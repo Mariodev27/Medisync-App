@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:medisync/src/widgets/BackgroundTemplate.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:medisync/src/pages/login/login_page.dart';
 import 'package:medisync/src/utils/global_color.dart';
+import 'package:medisync/src/pages/register/register_controller.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  final RegisterController controller = Get.put(RegisterController());
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +50,8 @@ class RegisterPage extends StatelessWidget {
                           width: 318,
                           height: 56,
                           child: TextField(
+                            controller:
+                                controller.nameController, // Agrega esto
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
@@ -68,7 +70,7 @@ class RegisterPage extends StatelessWidget {
                           width: 318,
                           height: 56,
                           child: TextField(
-                            obscureText: true,
+                            controller: controller.emailController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
@@ -87,6 +89,7 @@ class RegisterPage extends StatelessWidget {
                           width: 318,
                           height: 56,
                           child: TextField(
+                            controller: controller.passwordController,
                             obscureText: true,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -106,6 +109,7 @@ class RegisterPage extends StatelessWidget {
                           width: 318,
                           height: 56,
                           child: TextField(
+                            controller: controller.confirmPasswordController,
                             obscureText: true,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -132,9 +136,7 @@ class RegisterPage extends StatelessWidget {
                                     15), // Ajusta el valor para cambiar el redondeado
                               ),
                             ),
-                            onPressed: () {
-                              Get.to(() => const LoginPage());
-                            },
+                            onPressed: controller.register,
                             child: const Text(
                               'Registrate',
                               style: TextStyle(
@@ -161,9 +163,7 @@ class RegisterPage extends StatelessWidget {
                               ),
                             ),
                             TextButton(
-                              onPressed: () {
-                                Get.to(() => const LoginPage());
-                              },
+                              onPressed: controller.gotoLoginPage,
                               child: Text(
                                 'Ingrese',
                                 style: TextStyle(
