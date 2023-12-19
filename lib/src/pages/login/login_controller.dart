@@ -20,8 +20,8 @@ class LoginController extends GetxController {
     print('password $password');
 
     var response = await http.post(
-      // Uri.parse('http://54.226.1.168:8000/api/login'), //aws
-      Uri.parse('http://localhost:3000/api/login'), //localhost
+      Uri.parse('http://18.218.174.171:8000/api/login'), //aws
+      // Uri.parse('http://localhost:3000/api/login'), //localhost
       body: {
         'email': email,
         'password': password,
@@ -30,7 +30,7 @@ class LoginController extends GetxController {
 
     if (response.statusCode == 200) {
       // Si el servidor devuelve una respuesta OK, navega a la página de inicio.
-      Get.to(() => const HomePage());
+      Get.to(() => HomePage());
     } else {
       // Si el servidor devuelve una respuesta que no es OK, muestra un mensaje de error.
       Get.snackbar('Error', 'Failed to login');

@@ -26,8 +26,8 @@ class RegisterController extends GetxController {
 
     if (isValidForm(name, email, password, confirmPassword)) {
       var response = await http.post(
-        // Uri.parse('http://54.226.1.168:8000/api/register'), //aws
-        Uri.parse('http://localhost:3000/api/register'), //localhost
+        Uri.parse('http://18.218.174.171:8000/api/register'), //aws
+        // Uri.parse('http://localhost:3000/api/register'), //localhost
         body: {
           'name': name,
           'email': email,
