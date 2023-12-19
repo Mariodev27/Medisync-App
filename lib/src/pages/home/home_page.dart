@@ -395,7 +395,7 @@ class HomePage extends StatelessWidget {
   BottomNavigationBar _buildBottomNavigationBar() {
     return BottomNavigationBar(
       backgroundColor:
-          Colors.white, // Cambia esto a cualquier color que quieras
+          Colors.transparent, // Cambia esto a cualquier color que quieras
       elevation: 0, // Esto elimina la sombra
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
